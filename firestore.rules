@@ -1,0 +1,29 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // User profile document
+    match /users/{userId} {
+      allow read, write: if isOwner(userId);
+
+      // User memories subcollection
+      match /memories/{memoryId} {
+        allow read, write: if isOwner(userId);
+      }
+
+      // User autonomous task history subcollection
+      match /tasks/{taskId} {
+        allow read, write: if isOwner(userId);
+      }
+    }
+  }
+}

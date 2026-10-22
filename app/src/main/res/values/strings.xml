@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Maira Bot</string>
+    <string name="accessibility_service_desc">Maira Bot-এর ভয়েস নির্দেশনায় ফোনের স্ক্রিনে দৃশ্যমান বাটন ক্লিক, স্ক্রলিং ও টেক্সট পাঠ করার ঐচ্ছিক সহায়তা সেবা।</string>
+    <string name="default_web_client_id" translatable="false">101697716784-qdbkm2kc3kguubr732orkkku4desgi2o.apps.googleusercontent.com</string>
+</resources>

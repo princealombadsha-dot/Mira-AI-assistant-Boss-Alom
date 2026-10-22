@@ -1,0 +1,57 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile and VIP assistant preferences",
+      "type": "object",
+      "properties": {
+        "displayName": { "type": "string" },
+        "email": { "type": "string" },
+        "ownerTitle": { "type": "string" },
+        "themeMode": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["ownerTitle"]
+    },
+    "UserMemory": {
+      "title": "UserMemory",
+      "description": "User preferences and learned facts synced to cloud",
+      "type": "object",
+      "properties": {
+        "key": { "type": "string" },
+        "value": { "type": "string" },
+        "category": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["key", "value"]
+    },
+    "TaskRecord": {
+      "title": "TaskRecord",
+      "description": "History of autonomous task executions and AI logs",
+      "type": "object",
+      "properties": {
+        "query": { "type": "string" },
+        "resultSummary": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["query", "status"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Stores user profile and VIP assistant settings"
+    },
+    "/users/{userId}/memories/{memoryId}": {
+      "schema": "UserMemory",
+      "description": "User memories and preferences"
+    },
+    "/users/{userId}/tasks/{taskId}": {
+      "schema": "TaskRecord",
+      "description": "Autonomous task history"
+    }
+  }
+}

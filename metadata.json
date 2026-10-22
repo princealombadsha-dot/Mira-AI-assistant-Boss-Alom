@@ -1,0 +1,8 @@
+{
+  "name": "Maira Bot",
+  "description": "VIP Ultimate Premium Bengali AI Assistant for Alom Boss with voice conversation, AI camera vision, floating orb, and smart device control.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
